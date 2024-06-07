@@ -328,8 +328,8 @@ a:focus {
 }
 
 .feature_section {
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  -webkit-transform: translateY(-20%);
+          transform: translateY(-20%);
 }
 
 .feature_section .feature_container {
