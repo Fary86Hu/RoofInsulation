@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const nameFields = ['vezetekNev', 'keresztNev'];
         nameFields.forEach(field => {
             const value = document.getElementById(field).value.trim();
-            if (value.length < 2 || !/^[a-zA-ZáéíóöõúüûÁÉÍÓÖÕÚÜÛ\s-]+$/.test(value)) {
+            if (value.length < 2) {
                 showError(field, 'K\u00E9rj\u00FCk, adjon meg egy \u00E9rv\u00E9nyes nevet (minimum 2 karakter, csak bet\u0171k, k\u00F6t\u0151jelek \u00E9s sz\u00F3k\u00F6z\u00F6k).');
                 isValid = false;
             }
