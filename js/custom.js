@@ -66,7 +66,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     });
 
                     if (response.ok) {
-                        alert('Az \u00FCzenet sikeresen elk\u00FCldve!');
+                        $('#jelentkezesForm')[0].reset();
+                        alert('Az \u00FCzenet sikeresen elk\u00FCldve! u00FCgyint\u00E9z\u0151nk hamarosan keresni fogja.');
                     } else {
                         const errorData = await response.json();
                         console.error('Error response:', errorData);
