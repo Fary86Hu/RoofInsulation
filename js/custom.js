@@ -38,11 +38,18 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
     $(document).ready(function () {
-        $('#jelentkezesForm').on('submit', async function (e) {
+        const form = $('#jelentkezesForm');
+        const submitButton = $('#submitButton');
+        const buttonText = submitButton.find('.button-text');
+        const spinner = submitButton.find('.spinner');
+
+        form.on('submit', async function (e) {
             e.preventDefault();
 
             if (validateForm()) {
-                // Collect form data
+                submitButton.prop('disabled', true);
+                buttonText.hide();
+                spinner.show();
                 var data = {
                     vezetekNev: $('#vezetekNev').val(),
                     keresztNev: $('#keresztNev').val(),
@@ -76,6 +83,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 } catch (error) {
                     console.error('Error:', error);
                     alert('Hiba t\u00F6rt\u00E9nt az \u00FCzenet k\u00FCld\u00E9se k\u00F6zben.');
+                
+                } finally {
+                    submitButton.prop('disabled', false);
+                    spinner.hide();
+                    buttonText.show();
                 }
             }
         });
