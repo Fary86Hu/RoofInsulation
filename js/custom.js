@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 };
 
                 try {
-                    const response = await fetch('https://sendemailfreeroofinsulation.azurewebsites.net/api/SendEmailFunction', {
+                    const response = await fetch('https://sendemailroofinsulation.azurewebsites.net/api/SendEmailFunction', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
