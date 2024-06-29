@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 };
 
                 try {
-                    const response = await fetch('https://sendemailfreeroofinsulation.azurewebsites.net/api/NewApplication', {
+                    const response = await fetch('https://sendemailfreeroofinsulation.azurewebsites.net/api/SendEmailFunction', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
@@ -66,15 +66,15 @@ document.addEventListener('DOMContentLoaded', function () {
                     });
 
                     if (response.ok) {
-                        alert('Az üzenet sikeresen elküldve!');
+                        alert('Az \u00FCzenet sikeresen elk\u00FCldve!');
                     } else {
                         const errorData = await response.json();
                         console.error('Error response:', errorData);
-                        alert(`Hiba történt az üzenet küldése közben: ${errorData.message}`);
+                        alert(`Hiba t\u00F6rt\u00E9nt az \u00FCzenet k\u00FCld\u00E9se k\u00F6zben: ${errorData.message}`);
                     }
                 } catch (error) {
                     console.error('Error:', error);
-                    alert('Hiba történt az üzenet küldése közben.');
+                    alert('Hiba t\u00F6rt\u00E9nt az \u00FCzenet k\u00FCld\u00E9se k\u00F6zben.');
                 }
             }
         });
